@@ -11,13 +11,6 @@ rupee reaches the worker. Built as a working product, not slides.
 
 ![SahkarSetu — landing page](docs/screenshots/landing.png)
 
-## Screens
-
-| Customer: find a verified worker | Worker: job hub & earnings |
-|---|---|
-| ![Browse workers](docs/screenshots/browse-workers.png) | ![Worker hub](docs/screenshots/worker-hub.png) |
-| **Federation admin** | **Samiti (society) admin** |
-| ![Federation dashboard](docs/screenshots/admin-dashboard.png) | ![Society dashboard](docs/screenshots/society-dashboard.png) |
 
 > **Audit build (21 Sep 2026):** a full production-readiness pass is done — every finding,
 > its evidence, and the fix is in [`docs/AUDIT_REPORT.md`](docs/AUDIT_REPORT.md);
