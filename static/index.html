@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SahkarSetu — सहकारी कामगार मंच | Cooperative Gig Services</title>
+<link rel="stylesheet" href="/static/css/base.css">
+<link rel="stylesheet" href="/static/css/landing.css">
+<link rel="stylesheet" href="/static/css/app.css">
+<link rel="stylesheet" href="/static/vendor/leaflet.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%231f6b47'/><text x='50' y='68' font-size='52' text-anchor='middle' fill='white' font-family='Georgia'>से</text></svg>">
+<link rel="manifest" href="/static/manifest.json">
+<meta name="theme-color" content="#1f6b47">
+<link rel="apple-touch-icon" href="/static/img/icon-192.png">
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand" onclick="go('home')">
+      <div class="brand-mark">से</div>
+      <div><span class="brand-name" data-i18n="brand">SahkarSetu</span>
+        <span class="brand-sub" data-i18n="brandSub">श्रमिक सहकारी सेवा मंच</span></div>
+    </div>
+    <nav class="topnav">
+      <button class="navlink hidden" id="nav-mybookings" onclick="go('mybookings')" data-i18n="myBookings">मेरी बुकिंग</button>
+      <button class="navlink hidden" id="nav-worker" onclick="go('worker')" data-i18n="workHub">काम हब</button>
+      <button class="navlink hidden" id="nav-admin" onclick="go('admin')" data-i18n="adminDash">प्रशासन</button>
+      <button class="navlink hidden" id="nav-society" onclick="go('society')" data-i18n="socDash">समिति</button>
+      <div class="lang-toggle"><button id="lang-hi" onclick="setLang('hi')">हिं</button><button id="lang-en" onclick="setLang('en')">EN</button><button id="lang-ur" onclick="setLang('ur')">اردو</button></div>
+      <span id="user-chip"></span>
+      <button class="btn sm hidden" id="btn-login" onclick="go('auth')" data-i18n="login">लॉगिन</button>
+      <button class="btn sm ghost hidden" id="btn-logout" onclick="logout()" data-i18n="logout">लॉगआउट</button>
+    </nav>
+  </div>
+</header>
+
+<main id="view"></main>
+
+<footer class="site">
+  <div class="wrap foot-grid">
+    <div>
+      <div class="brand-name" style="font-size:16px">SahkarSetu · सहकार सेतु</div>
+      <p class="muted small" data-i18n="footTag">Delhi Labour Cooperative Federation ke saath ek demo platform.</p>
+    </div>
+    <p class="muted small" data-i18n="footDemo">DEMO MODE — koi asli paisa transfer nahi hota. SIH26089 build.</p>
+  </div>
+</footer>
+
+<div id="modal-root"></div>
+<script src="/static/vendor/leaflet.js"></script>
+<script src="/static/js/icons.js"></script>
+<script src="/static/js/i18n.js"></script>
+<script src="/static/js/api.js"></script>
+<script src="/static/js/views_home.js"></script>
+<script src="/static/js/views_browse.js"></script>
+<script src="/static/js/views_worker.js"></script>
+<script src="/static/js/views_admin.js"></script>
+<script src="/static/js/views_society.js"></script>
+<script src="/static/js/app.js"></script>
+<script>
+/* PWA: register service worker (installable app on Android/desktop) */
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () =>
+    navigator.serviceWorker.register("/static/sw.js").catch(() => {})
+  );
+}
+</script>
+</body>
+</html>

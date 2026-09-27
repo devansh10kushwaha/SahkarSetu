@@ -1,0 +1,8 @@
+# SahkarSetu backend
+fastapi>=0.110,<1
+uvicorn[standard]>=0.29,<1
+PyJWT>=2.8,<3
+reportlab>=4.0,<6
+
+# Test-only (visual_qa.py / live_url_check.py):
+#   pip install playwright && python -m playwright install chromium

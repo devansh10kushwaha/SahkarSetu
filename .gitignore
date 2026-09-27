@@ -1,0 +1,14 @@
+# runtime data — the app recreates this on first boot (seeded DB + generated secrets)
+data/
+
+# QA screenshots / scratch output written by tests
+qa/
+
+# python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# OS noise
+.DS_Store
+Thumbs.db

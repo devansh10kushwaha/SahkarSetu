@@ -1,0 +1,147 @@
+/* SahkarSetu design system - warm light theme, cooperative green.
+   Hand-set feel: serif display + humanist sans body, no gradients-as-design. */
+:root {
+  --paper: #faf7f0;
+  --card: #ffffff;
+  --ink: #1e2b23;
+  --ink-soft: #54635a;
+  --line: #e3ddcf;
+  --green: #1f6b47;
+  --green-dark: #14503a;
+  --green-tint: #e7f1ea;
+  --amber: #b97d10;
+  --amber-tint: #fdf3df;
+  --red: #a83a2a;
+  --red-tint: #faeae6;
+  --blue-tint: #e9eff7;
+  --radius: 14px;
+  --shadow: 0 1px 3px rgba(30, 43, 35, .07), 0 6px 18px rgba(30, 43, 35, .05);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Segoe UI", "Noto Sans", system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, .display {
+  font-family: Georgia, "Noto Serif", serif;
+  font-weight: 700;
+  letter-spacing: -.01em;
+}
+a { color: var(--green); text-decoration: none; }
+img { display: block; max-width: 100%; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+.muted { color: var(--ink-soft); }
+.small { font-size: 13px; }
+.hidden { display: none !important; }
+
+/* ---------- header ---------- */
+.topbar {
+  position: sticky; top: 0; z-index: 50;
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
+}
+.topbar-inner {
+  display: flex; align-items: center; gap: 18px;
+  height: 62px; max-width: 1120px; margin: 0 auto; padding: 0 20px;
+}
+.brand { display: flex; align-items: center; gap: 10px; cursor: pointer; }
+.brand-mark {
+  width: 34px; height: 34px; border-radius: 9px;
+  background: var(--green); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-family: Georgia, serif; font-weight: 700; font-size: 19px;
+}
+.brand-name { font-family: Georgia, serif; font-size: 20px; font-weight: 700; color: var(--ink); }
+.brand-sub { font-size: 11px; color: var(--ink-soft); display: block; margin-top: -3px; }
+.topnav { display: flex; gap: 4px; margin-left: auto; align-items: center; }
+.topnav a, .topnav button.navlink {
+  padding: 8px 12px; border-radius: 8px; border: 0; background: none;
+  color: var(--ink-soft); font-size: 14.5px; cursor: pointer; font-family: inherit;
+}
+.topnav a:hover, .topnav button.navlink:hover { background: var(--green-tint); color: var(--green-dark); }
+.lang-toggle {
+  display: flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden;
+}
+.lang-toggle button {
+  border: 0; background: none; padding: 6px 10px; cursor: pointer;
+  font-size: 12.5px; color: var(--ink-soft); font-family: inherit;
+}
+.lang-toggle button.on { background: var(--green); color: #fff; }
+
+/* ---------- buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 11px 20px; border-radius: 10px; border: 1px solid transparent;
+  background: var(--green); color: #fff; font-size: 15px; font-weight: 600;
+  cursor: pointer; font-family: inherit; transition: background .15s;
+}
+.btn:hover { background: var(--green-dark); }
+.btn.big { padding: 14px 26px; font-size: 16.5px; }
+.btn.ghost { background: none; border-color: var(--line); color: var(--ink); }
+.btn.ghost:hover { background: var(--green-tint); border-color: var(--green); color: var(--green-dark); }
+.btn.danger { background: none; border-color: var(--red); color: var(--red); }
+.btn.danger:hover { background: var(--red-tint); }
+.btn.sm { padding: 7px 13px; font-size: 13.5px; border-radius: 8px; }
+.btn:disabled { opacity: .45; cursor: not-allowed; }
+
+/* ---------- forms ---------- */
+.field { margin-bottom: 15px; }
+.field label { display: block; font-size: 13.5px; font-weight: 600; margin-bottom: 6px; }
+.field input, .field select, .field textarea {
+  width: 100%; padding: 11px 13px; border-radius: 10px;
+  border: 1px solid var(--line); background: #fff;
+  font-size: 15px; font-family: inherit; color: var(--ink);
+}
+.field input:focus, .field select:focus, .field textarea:focus {
+  outline: 2px solid var(--green); outline-offset: 1px; border-color: var(--green);
+}
+.form-error { background: var(--red-tint); color: var(--red); padding: 10px 14px; border-radius: 9px; font-size: 14px; margin-bottom: 14px; }
+
+/* ---------- badges & chips ---------- */
+.badge {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: 12px; font-weight: 600; padding: 3px 9px; border-radius: 99px;
+}
+.badge.green { background: var(--green-tint); color: var(--green-dark); }
+.badge.amber { background: var(--amber-tint); color: var(--amber); }
+.badge.red { background: var(--red-tint); color: var(--red); }
+.badge.blue { background: var(--blue-tint); color: #33557e; }
+.dot { width: 7px; height: 7px; border-radius: 50%; background: currentColor; display: inline-block; }
+.ic { vertical-align: -2px; }
+
+/* ---------- Urdu (RTL) ---------- */
+[dir="rtl"] .topbar-inner,
+[dir="rtl"] .wrap { direction: rtl; }
+[dir="rtl"] .hero, [dir="rtl"] .browse-cols, [dir="rtl"] .how-grid,
+[dir="rtl"] .split-band, [dir="rtl"] .stats-band { direction: rtl; }
+[dir="rtl"] .kv { flex-direction: row-reverse; }
+[dir="rtl"] .kv b { text-align: left; }
+[dir="rtl"] .price-tag { text-align: left; }
+[dir="rtl"] .wrow { direction: rtl; }
+[dir="rtl"] .wrow .info { text-align: right; }
+[dir="rtl"] .page-title { direction: rtl; }
+[dir="rtl"] .field label, [dir="rtl"] input, [dir="rtl"] select, [dir="rtl"] textarea { direction: rtl; text-align: right; }
+[dir="rtl"] input[type="tel"], [dir="rtl"] input[type="password"] { direction: ltr; text-align: right; }
+[dir="rtl"] .side-nav { direction: rtl; }
+
+/* ---------- phones ---------- */
+@media (max-width: 640px) {
+  .wrap { padding: 0 14px; }
+  .topbar-inner { flex-wrap: wrap; gap: 8px; padding: 10px 0; }
+  .topnav { gap: 8px; flex-wrap: wrap; }
+  .btn { min-height: 44px; }
+  .btn.sm { min-height: 38px; }
+  .btn.big { width: 100%; }
+  .field input, .field select, .field textarea { font-size: 16px; padding: 12px 13px; }
+  .card-grid, .card-grid.two, .trade-grid { grid-template-columns: 1fr; }
+  .stats-band { grid-template-columns: repeat(2, 1fr) !important; }
+  .app-main { padding: 18px 14px; }
+  .page-title h1 { font-size: 21px; }
+  .modal-card, .auth-card { width: 100% !important; max-width: 100% !important; }
+  .hero-float { position: static; margin-top: 10px; }
+}
